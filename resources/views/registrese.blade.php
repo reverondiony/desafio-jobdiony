@@ -7,22 +7,12 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <h3 class="card-header text-center">Edición de Usuarios</h3>
+                    <h3 class="card-header text-center">Registrese</h3>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-12 margin-tb">
-                                <div class="pull-left">
-                                    <h2>Agregar Nuevo</h2>
-                                </div>
-                                <div class="pull-right">
-                                    <a class="btn btn-primary" href="{{ route('users.index') }}"> Regresar</a>
-                                </div>
-                            </div>
-                        </div>
                         
                         @if ($errors->any())
                             <div class="alert alert-danger">
-                                Algunos de los campos son incorrectos.<br><br>
+                                There were some problems with your input.<br><br>
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
@@ -31,7 +21,7 @@
                             </div>
                         @endif
                         
-                        <form action="{{ route('users.store') }}" method="POST">
+                        <form action="{{ route('postRegister') }}" method="POST">
                             @csrf
                         
                             <div class="row">
@@ -47,14 +37,14 @@
                                         <input type="text" name="usuario"  class="form-control" placeholder="Usuario">
                                     </div>
                                 </div>
+                                <input name="id_rol" type="hidden" value="3" />
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                        <strong>Rol:</strong>
-                                        {{ Form::select('id_rol', \App\Models\Rol::all()->pluck('descripcion','id'), isset($c) ? $c->id_rol : old('id_rol'), ['class'=>'form-control custom-select','id'=>'id_rol','placeholder' => 'Seleccione...']) }}
+                                        <strong>Usuario:</strong>
+                                        <input type="password" name="password"  class="form-control" placeholder="Contraseña">
                                     </div>
                                 </div>
-                            <br>
-                                <div class="col-xs-12 col-sm-12 col-md-12 text-center"  style="margin-top:10px;">
+                                <div class="col-xs-12 col-sm-12 col-md-12 text-center" style="margin-top:10px;">
                                         <button type="submit" class="btn btn-primary">Guardar</button>
                                 </div>
                             </div>

@@ -42,18 +42,19 @@
                                         <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Mostrar</a>
                         
                                         <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Editar</a>
-                    
-                                        @csrf
-                                        @method('DELETE')
-                        
-                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                        @if(Auth::user()->id_rol == 1)
+                                            @csrf
+                                            @method('DELETE')
+                            
+                                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                                        @endif
                                     </form>
                                 </td>
                             </tr>
                             @endforeach
                         </table>
                     
-                        {!! $users->links() !!}
+                        <?php /*{!! $users->links() !!}*/ ?>
                     </div>
                 </div>
             </div>

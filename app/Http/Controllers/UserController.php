@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -14,7 +15,14 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::latest()->paginate(5);
+        $iduser = Auth::id(); 
+		//SE CONSULTA PARA SABER EL ROL DEL USUARIO
+		$users = User::where('id', $iduser)->paginate(1); 
+        //SE CONSULTA EL USUARIO LOGUEADO
+			if($users[0]->id_rol ==1){
+            	$users = User::latest()->paginate(5); 
+			}
+        //$users = User::latest()->paginate(5);
     
         return view('users.index',compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
