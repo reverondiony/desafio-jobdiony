@@ -18,6 +18,7 @@ Pasos a Seguir para su descarga e instalacion del proyecto
 - realizar *php artisan migrate*
 - realizar *php artisan db:seed*
 - correr en su navegador la url *http://localhost/desafio-jobdiony/public/*
+- usuario: admin | clave: 123456
 
 
 

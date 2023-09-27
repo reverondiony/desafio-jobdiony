@@ -1,5 +1,38 @@
 .abs-center {
-  margin-top: 8%;
+  margin-top: 2%;
   align-items: center;
   justify-content: center;
+}
+
+.tabcontent- {
+  border: 1px solid #ccc;
+  /*margin: auto;*/
+  background-color: rgba(241, 241, 241, 0.54);
+  color: black;
+  min-width: 375px;
+  /*padding: 6px 12px 30px 12px;*/
+  text-align: center !important;
+  margin-right: 10px; /*no colocar*/
+  opacity: 1;
+  margin-bottom: 5px;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, .2);
+  padding-top:25px;
+  padding-bottom:25px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tabcontent- {
+      max-width: 100%
+  }
+}
+.tabcontent- .black-title {
+  margin: 0;
+  padding: 20px 0 5px 0;
+  color: black;
+  text-transform: none;
+  font-size: 15px;
+  font-weight: 400
+}
+
+.text-izq{
+  text-align: left !important;
 }

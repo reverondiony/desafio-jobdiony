@@ -7,19 +7,25 @@
     <div class="cotainer">
         <div class="row justify-content-center">
             <div class="col-md-6">  
-                <div class="card"> 
+                <div class="card card-fluid"> 
                     @if(!empty($noticias->imagen))
-                        <img class="card-img-top" src="data:image/jpg;base64,{{ $noticias->imagen }}" />
+                        <img class="card-img-top img-fluid rounded" src="data:image/jpg;base64,{{ $noticias->imagen }}" style="width:650px;" />
+                        <a href="{{ route('noticias.show',$noticias->id) }}" class="btn btn-sm btn-primary" style="padding-top:-20px !important;"> Ver Noticia <i class="fas fa-arrow-alt-circle-right"></i></a>
                         <div class="card-body">
-                            <h5 class="card-title"> <b>Titulo: </b>{{ $noticias->titulo }}</h5>
-                            <h5 class="card-title"> <b>Autor: </b>{{ $noticias->autor }}</h5>
-                            <h5 class="card-title"> <b>Categoria: </b>{{ $noticias->categoria->descripcion }}</h5>
-                            <h5 class="card-title"> <b>Responsable: </b>{{ $noticias->user->nombre }}</h5>
-                            <p class="card-text"> {{ $noticias->contenido }}</p>
-                            <a href="{{ route('noticias.show',$noticias->id) }}" class="btn btn-primary">Ver Noticia</a>
+                            <h6 class="card-title alert alert-primary"> 
+                                <b>Titulo: </b>{{ $noticias->titulo }}
+                                
+                            </h6>
+                            <p style="text-align:left !important;">
+                                <b>Autor: </b>{{ $noticias->autor }}<br>
+                                <b>Categoria: </b>{{ $noticias->categoria->descripcion }}<br>
+                                <b>Responsable: </b>{{ $noticias->user->nombre }}<br>
+                            </p>
+                            <p style="text-align:justify !important;"> {{ $noticias->contenido }}</p>
+                            
                         </div>
                     @else
-                        <img class="card-img-top" src="{{ asset('img/noticias.png') }}" alt="noticias">
+                        <img class="card-img-top img-fluid" src="{{ asset('img/noticias.png') }}" alt="noticias" >
                         <div class="card-body">
                             <h5 class="card-title">Visitar</h5>
                             <p class="card-text">Las mejores noticias en un solo canal</p>
@@ -32,7 +38,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <h3 class="card-header text-center">Iniciar Sesion</h3>
+                    <h3 class="card-header bg-primary text-white text-center">Iniciar Sesion</h3>
                     <div class="card-body">
                         <div class="text-center"><img src="{{ asset('img/dionoticias.png') }}" style="width:100px;" /></div>
                         <form method="POST" action="{{ route('custom-login') }}">
@@ -58,7 +64,7 @@
                                 </div>
                             </div>
                             <div class="d-grid mx-auto">
-                                <button type="submit" class="btn btn-dark btn-block">Enviar</button>
+                                <button type="submit" class="btn btn-dark btn-block">Entrar</button>
                             </div>
                         </form>
                     </div>

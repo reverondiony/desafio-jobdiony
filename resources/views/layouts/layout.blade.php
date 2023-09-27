@@ -57,10 +57,10 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('users.create') }}">
-                                            {{ __('Registrar') }}
+                                            <i class="fas fa-edit"></i> {{ __('Registrar') }}
                                         </a>
                                         <a class="dropdown-item" href="{{ route('users.index') }}">
-                                            {{ __('Listado') }}
+                                            <i class="fas fa-th-list"></i> {{ __('Listado') }}
                                         </a>
                                     </div>
                                 </li>
@@ -73,25 +73,25 @@
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         @if(Auth::user()->id_rol == 1 || Auth::user()->id_rol == 2)
                                             <a class="dropdown-item" href="{{ route('noticias.create') }}">
-                                                {{ __('Registrar') }}
+                                                <i class="fas fa-edit"></i> {{ __('Registrar') }}
                                             </a>
                                         @endif
                                         <a class="dropdown-item" href="{{ route('noticias.index') }}">
-                                            {{ __('Listado') }}
+                                            <i class="fas fa-th-list"></i> {{ __('Listado') }}
                                         </a>
                                     </div>
                                 </li>
                             
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->nombre }}
+                                <i class="fas fa-user"></i> {{ Auth::user()->nombre }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Cerrar Sesion') }}
+                                        <i class="fas fa-door-closed"></i> {{ __('Cerrar Sesion') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -105,7 +105,7 @@
             </div>
     </nav>
     <div class="container">
-        <div class="abs-center" style="margin-bottom:20px;">
+        <div class="abs-center tabcontent-" style="margin-bottom:20px;">
             @if ($errors->any())
                 <div class="alert alert-danger">
                     Existen algunos errores con tus campos<br><br>

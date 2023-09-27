@@ -5,14 +5,14 @@
 <main class="login-form">
     <div class="cotainer">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card">
-                    <h3 class="card-header text-center">Listado de Noticias</h3>
+                    <h3 class="card-header bg-primary text-white text-center">Listado de Noticias</h3>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-12 text-right">
-                                <div class="pull-right">
-                                    <a class="btn btn-success" href="{{ route('noticias.create') }}"> Registrar Noticia</a>
+                                <div class="float-end">
+                                    <a class="btn btn-sm btn-success" href="{{ route('noticias.create') }}"> Registrar Noticia</a>
                                 </div>
                             </div>
                         </div>
@@ -23,16 +23,16 @@
                             </div>
                         @endif
                     
-                        <table class="table table-bordered" id="myTable">
-                            <thead>
-                                <tr class="bg-primary">
-                                    <th>Nro</th>
-                                    <th>Titulo</th>
-                                    <th>Autor</th>
-                                    <th>Categoria</th>
-                                    <th>Contenido</th>
-                                    <th>Imagen</th>
-                                    <th width="280px">Acciones</th>
+                        <table class="table table-bordered table-striped" id="myTable">
+                            <thead class="thead-dark">
+                                <tr >
+                                    <th class="text-center">Nro</th>
+                                    <th class="text-center">Titulo</th>
+                                    <th class="text-center">Autor</th>
+                                    <th class="text-center">Categoria</th>
+                                    <th class="text-center">Contenido</th>
+                                    <th class="text-center">Imagen</th>
+                                    <th width="280px" class="text-center">Acciones</th>
                                 </tr>
                             </thead>
                             @php $i=0; @endphp
@@ -53,14 +53,14 @@
                                     <td class="text-center">
                                         <form action="{{ route('noticias.destroy',$user->id) }}" method="POST">
                         
-                                            <a class="btn btn-info" href="{{ route('noticias.show',$user->id) }}">Mostrar</a>
+                                            <a class="btn btn-sm btn-info" href="{{ route('noticias.show',$user->id) }}"><i class="fas fa-th-list" title="Mostrar"></i></a>
                                             @if(Auth::check() && (Auth::user()->id_rol == 1 || Auth::user()->id_rol == 2))
-                                                <a class="btn btn-primary" href="{{ route('noticias.edit',$user->id) }}">Editar</a>
+                                                <a class="btn btn-sm btn-primary" href="{{ route('noticias.edit',$user->id) }}"><i class="fas fa-edit" title="Editar"></i> </a>
                             
                                                 @csrf
                                                 @method('DELETE')
                                 
-                                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash" title="Eliminar"></i> </button>
                                             @endif
                                         </form>
                                     </td>
