@@ -8,6 +8,15 @@
 </p>
 
 ## About Laravel
+Pasos a Seguir para su descarga e instalacion del proyecto
+
+realizar un git clone https://github.com/reverondiony/desafio-jobdiony.git Y ubicarlo en su servidor -realziar un composer update
+configurar la variable de entorno .env DB_DATABASE=desafio
+crear php artisan key:generate
+configurar la base de datos
+realizar php artisan migrate
+realizar php artisan db:seed
+
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
