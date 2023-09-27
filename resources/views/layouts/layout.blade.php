@@ -105,7 +105,7 @@
             </div>
     </nav>
     <div class="container">
-        <div class="abs-center tabcontent-" style="margin-bottom:20px;">
+        <div class="abs-center tabcontent-1" style="margin-bottom:20px;">
             @if ($errors->any())
                 <div class="alert alert-danger">
                     Existen algunos errores con tus campos<br><br>

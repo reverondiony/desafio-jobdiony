@@ -27,20 +27,20 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                        <strong class="text-izq">Nombre:</strong>
+                                        <strong class="float-start">Nombre:</strong>
                                         <input type="text" name="nombre"  class="form-control" placeholder="Nombre">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                        <strong>Usuario:</strong>
+                                        <strong class="float-start">Usuario:</strong>
                                         <input type="text" name="usuario"  class="form-control" placeholder="Usuario">
                                     </div>
                                 </div>
                                 <input name="id_rol" type="hidden" value="3" />
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                        <strong>Usuario:</strong>
+                                        <strong class="float-start">Usuario:</strong>
                                         <input type="password" name="password"  class="form-control" placeholder="Contraseña">
                                     </div>
                                 </div>
