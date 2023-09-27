@@ -10,12 +10,14 @@
 ## About Laravel
 Pasos a Seguir para su descarga e instalacion del proyecto
 
-- realizar un git clone https://github.com/reverondiony/desafio-jobdiony.git Y ubicarlo en su servidor -realziar un composer update
-- configurar la variable de entorno .env DB_DATABASE=desafio
-- crear php artisan key:generate
-- configurar la base de datos
-- realizar php artisan migrate
-- realizar php artisan db:seed
+- realizar un *git clone https://github.com/reverondiony/desafio-jobdiony.git* Y ubicarlo en su servidor 
+- realziar un *composer update*
+- configurar la variable de entorno *.env* DB_DATABASE=desafio
+- ejecutar *php artisan key:generate*
+- crear la base de datos *desafio* en su servidor
+- realizar *php artisan migrate*
+- realizar *php artisan db:seed*
+- correr en su navegador la url *http://localhost/desafio-jobdiony/public/*
 
 
 
