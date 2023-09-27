@@ -12,7 +12,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
+//RUTAS DE LOGIN
+Route::get('/', [AuthController::class, 'index'])->name('home');
+Route::post('/custom-login', [AuthController::class, 'login'])->name('custom-login');
+Route::get('/logados', [AuthController::class, 'logados'])->name('logados');
+
+//RUTAS DE USUARIO
+Route::resource('users', UserController::class);
