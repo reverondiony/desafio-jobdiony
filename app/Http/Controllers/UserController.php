@@ -38,15 +38,17 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request);
         $request->validate([
             'nombre' => 'required',
             'usuario' => 'required',
+            'id_rol' => 'required',
         ]);
-    
-        User::create($request->all());
+        //$request->get('password') = bcrypt('123456');
+        User::create($request->all() + ['password' => bcrypt('123456')]);
      
         return redirect()->route('users.index')
-                        ->with('success','User created successfully.');
+                        ->with('success','Usuario creado exitosamente!');
     }
 
     /**
@@ -83,8 +85,9 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required',
+            'nombre' => 'required',
+            'usuario' => 'required',
+            'id_rol' => 'required',
         ]);
     
         $user->update($request->all());
